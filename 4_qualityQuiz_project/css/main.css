@@ -25,6 +25,7 @@ body{
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 180px;
 }
 
 .start_quiz {
@@ -42,7 +43,10 @@ body{
 
 /* PANELS */
 
-.panel_two .wrapper {
+.panel_two .wrapper,
+.panel_three .wrapper,
+.panel_four .wrapper,
+.panel_five  .wrapper {
     display:none;
 }
 
@@ -53,21 +57,42 @@ body{
 }
 .options div {
     display: none;
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #3f51b5;
+    transition: all 0.2s ease;
 }
 
+.options div.active {
+    color: #007fff;
+    background: #313131;
+}
 
+.next_question {
+    cursor: pointer;
+}
 
-/* PROGRESS */
+/* PROGRESS AND ERROR */
+
+.error {
+    position: fixed;
+    bottom: 13px;
+    width: 100%;
+    color: #F44336;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
 
 .progress {
     position: fixed;
     bottom:0;
-    background: red;
+    background: #d0d0d0;
     width:100%;
 }
 
 .bar {
-    width:10px;
+    width:0%;
     height:5px;
-    background: blue;
+    background: #00BCD4;
 }

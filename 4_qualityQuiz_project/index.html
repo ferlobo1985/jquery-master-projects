@@ -25,7 +25,7 @@
 
     <div class="content_container">
 
-        <!--  start quiz -->
+        <!-- PANEL ONE -->
         <div class="item panel_one hidden" data-panel="0">
             <div class="wrapper">
                 <h1 class="hidden">Quizzer</h1>
@@ -35,16 +35,68 @@
             </div>
         </div>
 
-        <!--  Question ONE -->
+        <!--  PANEL TWO -->
         <div class="item panel_two hidden" data-panel="1">
             <div class="wrapper">
 
-                <h1>QUESTION</h1>
+                <h3>How do you drink your Beer ?</h3>
                 <div class="options">
-                    <div>Very Good</div>
-                    <div>Regular</div>
-                    <div>Very bad</div>
+                    <div>Very cold</div>
+                    <div>Warm</div>
+                    <div>I don't drink</div>
                 </div>
+                <div class="next_question" data-next="2"> Next question </div>
+            </div>
+        </div>
+
+        <!--  PANEL THREE  -->
+        <div class="item panel_three hidden" data-panel="2">
+            <div class="wrapper">
+
+                <h3>What do you think about trump ?</h3>
+                <div class="options">
+                    <div>I love him</div>
+                    <div>I hate him</div>
+                    <div>I really don't care</div>
+                </div>
+                <div class="next_question" data-next="3"> Next question </div>
+            </div>
+        </div>
+
+        <!--  PANEL FOUR  -->
+        <div class="item panel_four hidden" data-panel="3">
+            <div class="wrapper">
+
+                <h3>Say way "what" again....</h3>
+                <div class="options">
+                    <div>I Dare you</div>
+                    <div>If you can</div>
+                    <div>..WHAT !!</div>
+                </div>
+                <div class="next_question" data-next="4"> Next question </div>
+            </div>
+        </div>
+
+        <!--  PANEL FIVE  -->
+        <div class="item panel_four hidden" data-panel="4">
+            <div class="wrapper">
+
+                <h3>Who wins the battle ? </h3>
+                <div class="options">
+                    <div>Rock</div>
+                    <div>Pop</div>
+                    <div>Jazz</div>
+                </div>
+                <div class="next_question" data-next="5"> Next question </div>
+            </div>
+        </div>
+
+
+        <!-- final -->
+        <div class="item panel_five hidden" data-panel="5">
+            <div class="wrapper">
+
+                <h3>Thank you for participating !!</h3>
 
             </div>
         </div>
@@ -53,7 +105,9 @@
 
     </div>
 
-
+    <div class="error">
+        Please make a selection
+    </div>
     <div class="progress">
         <div class="bar"></div>
     </div>
