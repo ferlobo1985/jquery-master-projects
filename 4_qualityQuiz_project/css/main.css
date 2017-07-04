@@ -12,7 +12,6 @@ body{
     height: 100%;
     top: 0;
     position: fixed;
-    display:none;
 }
 
 
@@ -43,6 +42,18 @@ body{
 
 /* PANELS */
 
+.panel_two .wrapper {
+    display:none;
+}
+
+/* SELECTABLE ELEMENTS */
+
+.options {
+    height:200px;
+}
+.options div {
+    display: none;
+}
 
 
 
