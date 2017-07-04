@@ -1,0 +1,115 @@
+body{
+    font-family: Roboto, 'arial';
+    margin:0;
+}
+
+.movies_header .logo{
+    font-family: Anton;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 3px solid #292b2c;
+    color: #d9534f;
+    padding: 10px 0px;
+    background: #292b2c;
+}
+
+.movies_filters {
+    border-bottom: 1px solid #cacaca;
+}
+
+.movies_filters .open{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 300;
+    padding: 10px;
+}
+.movies_filters .open .fa{
+    margin-right: 5px;
+    color:#d9534f;
+    transition: all 0.2s ease;
+}
+
+.movies_filters .open.active .fa{
+    -webkit-transform: rotate(-180deg);
+}
+
+
+.movies_filters .filter_container {
+    border-top: 1px solid #cacaca;
+    padding: 10px;
+    background: #f3f3f3;
+    display:none;
+}
+
+.movies_filters .filter_container label {
+    font-size: 13px;
+}
+.movies_filters .filter_container select {
+    margin-right: 30px;
+}
+
+
+/* CONTENT */
+
+.movies_content {
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.movies_content .movie_item {
+    border: 1px solid #dedede;
+    margin-bottom: 10px;
+}
+
+.movies_content .movie_item .header {
+    display: flex;
+}
+
+.movies_content .movie_item .header .left {
+    flex-grow: 1;
+}
+.movies_content .movie_item .header .right{
+    position: relative;
+    padding:10px;
+    width: 100%;
+}
+
+/* item styles */
+
+
+.movies_content .movie_item .header .left img {
+    width: 150px;
+}
+
+.movies_content .movie_item .header .right  h3 {
+    margin: 0px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #dadada;
+    color: #F44336;
+}
+
+.movies_content .movie_item .header .right .node {
+    font-size: 14px;
+    margin-top: 10px;
+}
+.movies_content .movie_item .header .right .node span {
+    font-weight: bold;
+}
+
+.movies_content .movie_item .header .right .show_desc {
+    position: absolute;
+    font-size: 13px;
+    background: #cacaca;
+    padding: 5px 10px;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    cursor: pointer;
+}
+
+.movies_content .movie_item .description {
+    background: #efefef;
+    padding: 20px;
+    font-size: 14px;
+    display:none;
+}
