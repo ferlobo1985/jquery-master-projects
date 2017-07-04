@@ -1,0 +1,47 @@
+body{padding:20px;font-family: Roboto, arial}
+
+/*===============================
+            OVERLAY
+ ================================*/
+
+.overlay-veil {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: #cecece;
+    display: none;
+}
+
+.overlay-component {
+    width:400px;
+    height:400px;
+    background:#fff;
+    position:absolute;
+    color:#fff;
+    border-radius: 10px;
+    top:50%;
+    left:50%;
+    padding:15px;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+    display: none;
+}
+
+.overlay-component .closeOverlay {
+    color: #bd2424;
+    cursor: pointer;
+}
+
+
+.overlay-component h1 {
+    color: #4a4a4a;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.overlay-component .ov-content {
+    color: #868686;
+}
