@@ -1,26 +1,39 @@
 
 
-$(document).ready(function() {
 
-    (function musicDb(){
-        var database;
+    (function start(){
 
-        this.loadAssets = function(){
+        this.runFuntion = function(){
+            alert('hey')
+        };
+
+
+    })();
+
+
+    var osomMovie = {};
+    osomMovie.runFunction = function(){
+        alert('hey');
+    };
+
+
+    osomMovie.database = [];
+    osomMovie.loadAssets = function(){
             $.getJSON( "db/movies.json", function( data ) {
-                database = data;
-                init();
+                osomMovie.database = data;
+                osomMovie.init();
             })
         };
 
-        this.init  = function(){
-            filterSlider();
-            getTypes();
-            getDirector();
-            generateMarkup();
+    osomMovie.init  = function(){
+        osomMovie.filterSlider();
+        osomMovie.getTypes();
+        osomMovie.getDirector();
+        osomMovie.generateMarkup();
         };
 
 
-        this.filterSlider = function(){
+    osomMovie.filterSlider = function(){
             $(".filter.open").on("click",function(){
 
                 $('.filter_container').slideToggle(300,function(){
@@ -38,12 +51,12 @@ $(document).ready(function() {
         };
 
 
-        this.getTypes = function() {
+    osomMovie.getTypes = function() {
             var types = [];
 
-            $.each( database, function( index ) {
-                if($.inArray(database[index].type, types)){
-                    var typeValue = database[index].type;
+            $.each( osomMovie.database, function( index ) {
+                if($.inArray(osomMovie.database[index].type, types)){
+                    var typeValue = osomMovie.database[index].type;
                     types.push(typeValue);
                     $('#categories').append('<option value="'+typeValue +'">' + typeValue + '</option>')
                 }
@@ -51,12 +64,13 @@ $(document).ready(function() {
         };
 
 
-        this.getDirector = function(){
+    osomMovie.getDirector = function(){
+            var db = osomMovie.database;
             var director = [];
 
-            $.each(database,function (index) {
-                if($.inArray(database[index].director, director)){
-                    var directorValue = database[index].director;
+            $.each(db,function (index) {
+                if($.inArray(db[index].director, director)){
+                    var directorValue = db[index].director;
                     director.push(directorValue);
                     $('#directors').append('<option value="'+ directorValue +'">' + directorValue + '</option>')
                 }
@@ -65,48 +79,47 @@ $(document).ready(function() {
         };
 
 
-        this.generateMarkup = function(){
+    osomMovie.generateMarkup = function(){
 
             var template = '';
 
-            $.each(database,function (index) {
+            $.each(osomMovie.database,function (index) {
 
-                var id = database[index].id;
-                var category = database[index].type;
-                var director = database[index].director;
+                var db = osomMovie.database;
+                var id = db[index].id;
 
-                template +=  '<div class="movie_item" data-id="'+ id +'" data-category="'+ category +'"  data-director="'+ director +'">';
+                template +=  '<div class="movie_item" data-id="'+ id +'" >';
                 template +=     '<div class="header">';
                 template +=         '<div class="left">';
-                template +=             '<img src="images/movies/'+ database[index].img +'">';
+                template +=             '<img src="images/movies/'+ db[index].img +'">';
                 template +=         '</div>';
                 template +=         '<div class="right">';
-                template +=             '<h3>'+ database[index].title +'</h3>';
+                template +=             '<h3>'+ db[index].title +'</h3>';
                 template +=             '<div class="node">';
-                template +=                 '<span>Year:</span> '+ database[index].year;
+                template +=                 '<span>Year:</span> '+ db[index].year;
                 template +=             '</div>';
                 template +=             '<div class="node">';
-                template +=                 '<span>Director:</span> '+ database[index].director;
+                template +=                 '<span>Director:</span> '+ db[index].director;
                 template +=             '</div>';
                 template +=             '<div class="node">';
-                template +=                 '<span>Type:</span> '+ database[index].type ;
+                template +=                 '<span>Type:</span> '+ db[index].type ;
                 template +=             '</div>';
                 template +=             '<div class="show_desc">See description</div>';
                 template +=         '</div>';
                 template +=     '</div>';
                 template +=     '<div class="description">';
-                template +=         '<strong>Description:</strong> ' + database[index].desc;
+                template +=         '<strong>Description:</strong> ' + db[index].desc;
                 template +=     '</div>';
                 template += '</div>';
             });
 
             $('.movies_content').append(template);
-            showDescription();
-            startFilter();
+            osomMovie.showDescription();
+            osomMovie.startFilter();
 
         };
 
-        this.showDescription = function(){
+    osomMovie.showDescription = function(){
 
             $('.show_desc').on("click", function(){
                 var $this = $(this);
@@ -125,21 +138,22 @@ $(document).ready(function() {
         };
 
 
-        this.startFilter = function(){
+    osomMovie.startFilter = function(){
 
             $('select').on("change",function(){
 
-                var category = $('#categories').val();
+                var db = osomMovie.database;
+                var type = $('#categories').val();
                 var director = $('#directors').val();
                 var results = [];
 
-                $.each(database,function (index) {
+                $.each(db,function (index) {
                     // CATEGORIES
-                    if(database[index].type === category){
-                        results.push(database[index].id);
+                    if(db[index].type === type){
+                        results.push(db[index].id);
                     }
-                    if(database[index].director === director){
-                        results.push(database[index].id);
+                    if(db[index].director === director){
+                        results.push(db[index].id);
                     }
                     //console.log(results);
                 });
@@ -161,7 +175,6 @@ $(document).ready(function() {
 
         };
 
-        loadAssets();
-    })();
+    osomMovie.loadAssets();
 
-});
+

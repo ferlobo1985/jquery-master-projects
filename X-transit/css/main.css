@@ -1,0 +1,9 @@
+body {
+    margin:50px;
+}
+
+.square {
+    width:200px;
+    height:200px;
+    background:red;
+}
